@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://v5f0elfl7ol8"]
+
+[ext_resource type="Script" path="res://entities/enemies/zombie.gd" id="1_1v2k1"]
+[ext_resource type="Texture2D" uid="uid://b26ermhtbojmr" path="res://icon.svg" id="1_uropu"]
+[ext_resource type="PackedScene" uid="uid://bdpgddrajm1qe" path="res://components/Hitbox.tscn" id="2_q8eiq"]
+[ext_resource type="PackedScene" uid="uid://2a12v183c16a" path="res://components/HealthComponent.tscn" id="4_ppwy7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u60b"]
+size = Vector2(32, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6af7"]
+size = Vector2(37, 36)
+
+[node name="zombie" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_1v2k1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_4u60b")
+
+[node name="MeshInstance2D" type="Sprite2D" parent="."]
+scale = Vector2(0.28125, 0.28125)
+texture = ExtResource("1_uropu")
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_ppwy7")]
+max_health = 10
+
+[node name="Hitbox" parent="." instance=ExtResource("2_q8eiq")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_l6af7")
+
+[connection signal="on_death" from="HealthComponent" to="." method="_on_health_component_on_death"]

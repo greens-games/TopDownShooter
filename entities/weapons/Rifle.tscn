@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0qud8dgk1de2"]
+
+[ext_resource type="Script" path="res://entities/weapons/rifle.gd" id="1_q5ir3"]
+[ext_resource type="PackedScene" uid="uid://dvp7crxd45ec" path="res://components/ShootingComponent.tscn" id="1_qr764"]
+[ext_resource type="Texture2D" uid="uid://e085d3d5ascj" path="res://RifeTop.png" id="1_xar4a"]
+[ext_resource type="PackedScene" uid="uid://dibxl6moemb8j" path="res://components/WeaponStats.tscn" id="4_css5w"]
+
+[node name="Rifle" type="Node2D"]
+script = ExtResource("1_q5ir3")
+
+[node name="ShootingComponent" parent="." instance=ExtResource("1_qr764")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("1_xar4a")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="Handle" type="Marker2D" parent="."]
+position = Vector2(-2, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="WeaponStats" parent="." instance=ExtResource("4_css5w")]
+damage = 5
+cooldown = 0.5

@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://yml4q4j644xa"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_67f11"]
+[ext_resource type="PackedScene" uid="uid://v5f0elfl7ol8" path="res://entities/enemies/Zombie.tscn" id="2_4atkd"]
+[ext_resource type="PackedScene" uid="uid://clvrpglr2qvt2" path="res://entities/player/Player.tscn" id="3_lj483"]
+[ext_resource type="PackedScene" uid="uid://2qibcfke4icx" path="res://managers/BattleManager.tscn" id="4_7yffa"]
+[ext_resource type="Script" path="res://managers/battle_manager.gd" id="5_qldsf"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_67f11")
+
+[node name="zombie" parent="." instance=ExtResource("2_4atkd")]
+position = Vector2(100, 153)
+exp_reward = 10
+
+[node name="Player" parent="." instance=ExtResource("3_lj483")]
+position = Vector2(409, 173)
+
+[node name="BattleManager" parent="." instance=ExtResource("4_7yffa")]
+script = ExtResource("5_qldsf")
+
+[node name="EnemySpawner" type="Timer" parent="."]

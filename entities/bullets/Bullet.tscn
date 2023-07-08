@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3v820htt24gq"]
+
+[ext_resource type="Script" path="res://entities/bullets/bullet.gd" id="1_4vcuk"]
+[ext_resource type="PackedScene" uid="uid://bdpgddrajm1qe" path="res://components/Hitbox.tscn" id="2_3cbfw"]
+[ext_resource type="Texture2D" uid="uid://n084etvitcnq" path="res://Bullet.png" id="3_wchh7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t24b2"]
+radius = 2.0
+height = 10.0
+
+[node name="Node2D" type="Node2D"]
+rotation = 1.5708
+scale = Vector2(0.351438, 0.502003)
+script = ExtResource("1_4vcuk")
+
+[node name="Hitbox" parent="." instance=ExtResource("2_3cbfw")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Hitbox"]
+texture = ExtResource("3_wchh7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CapsuleShape2D_t24b2")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
