@@ -20,3 +20,4 @@ func _process(delta):
 
 func take_damage(damage_taken:int):
 	current_health -= damage_taken
+	pass

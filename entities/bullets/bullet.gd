@@ -1,18 +1,18 @@
 extends Node2D
 class_name Bullet
 
-const SPEED = 200
+const SPEED = 500
 var velocity
-var direction
+var direction:Vector2
 var damage:int
 # Called when the node enters the scene tree for the first time.
 
-func init(damage:int):
+func init(damage:int, direction:Vector2):
 	self.damage = damage
-	
+	self.direction = direction
 
 func _ready():
-	direction = position.direction_to(get_global_mouse_position()).normalized()
+#	direction = position.direction_to(get_global_mouse_position()).normalized()
 	pass # Replace with function body.
 
 

@@ -8,7 +8,7 @@
 radius = 2.0
 height = 10.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Bullet" type="Node2D"]
 rotation = 1.5708
 scale = Vector2(0.351438, 0.502003)
 script = ExtResource("1_4vcuk")

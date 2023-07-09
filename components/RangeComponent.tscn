@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7re4cml5bbm6"]
+
+[ext_resource type="Script" path="res://components/range_component.gd" id="1_7wxqg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lk6gt"]
+radius = 14.0357
+
+[node name="RangeComponent" type="Area2D"]
+script = ExtResource("1_7wxqg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lk6gt")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)

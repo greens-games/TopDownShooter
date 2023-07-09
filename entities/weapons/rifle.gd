@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 
 @onready var shooting_component:ShootingComponent = $ShootingComponent
@@ -22,7 +22,11 @@ func _process(delta):
 func action():
 	if can_shoot:
 		can_shoot = false
-		shooting_component.shoot(muzzle.global_position, weapon_stats.damage)
+		shooting_component.shoot(
+			muzzle.global_position, 
+			weapon_stats.damage, 
+			global_position.direction_to(muzzle.global_position).normalized()
+		)
 		attack_timer.start()
 
 func on_timer_timeout():

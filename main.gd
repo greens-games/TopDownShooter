@@ -19,5 +19,4 @@ func _process(delta):
 	pass
 
 func spawn_new_enemy():
-	print("spawning enemy")
 	pass
