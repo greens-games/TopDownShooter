@@ -2,7 +2,7 @@ extends Node
 class_name BattleManager
 
 var player:Player
-var enemies:Array
+var enemies:Array #only enemies with healthcomponent
 
 func init(player: Player):
 	self.player = player

@@ -6,7 +6,7 @@ var bullet_scene = preload("res://entities/bullets/Bullet.tscn")
 
 func shoot(muzzle_pos:Vector2, damage:int, direction:Vector2):	
 	var bullet:Bullet = bullet_scene.instantiate()
-	bullet.init(damage, direction)
 	bullet.global_position = muzzle_pos
-	bullet.rotation = (get_global_mouse_position() - bullet.global_position).angle() + deg_to_rad(90)
+	bullet.rotation = (muzzle_pos - get_global_mouse_position()).angle() + deg_to_rad(90)
+	bullet.init(damage, direction)
 	get_node("/root").add_child(bullet)

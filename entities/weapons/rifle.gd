@@ -1,5 +1,6 @@
 extends Node2D
 
+var radius = 100.0
 
 @onready var shooting_component:ShootingComponent = $ShootingComponent
 @onready var muzzle:Marker2D = $Muzzle

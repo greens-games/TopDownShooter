@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn5t7oj2r1sb7"]
+
+[ext_resource type="PackedScene" uid="uid://v5f0elfl7ol8" path="res://entities/enemies/Zombie.tscn" id="1_q4qgt"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4s60e"]
+vertices = PackedVector2Array(1152, 0, 1152, 648, 0, 656, 0, 0)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 0, 656, 1152, 648, 1152, 0)])
+
+[node name="test" type="Node2D"]
+
+[node name="zombie" parent="." instance=ExtResource("1_q4qgt")]
+position = Vector2(40, 40)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_4s60e")

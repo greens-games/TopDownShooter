@@ -8,6 +8,7 @@
 size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_nny3s")
 
 [node name="Rifle" parent="." instance=ExtResource("4_mxg27")]

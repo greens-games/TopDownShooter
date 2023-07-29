@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://puagof8o7cn6"]
+
+[ext_resource type="Script" path="res://components/patrol_component.gd" id="1_qywbp"]
+
+[node name="PatrolComponent" type="Node2D"]
+script = ExtResource("1_qywbp")
