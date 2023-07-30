@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://clvrpglr2qvt2"]
+[gd_scene load_steps=8 format=3 uid="uid://clvrpglr2qvt2"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_nny3s"]
 [ext_resource type="PackedScene" uid="uid://2a12v183c16a" path="res://components/HealthComponent.tscn" id="3_rt7y7"]
+[ext_resource type="PackedScene" uid="uid://7cdytlxx08by" path="res://states/StateMachine.tscn" id="4_jb82f"]
 [ext_resource type="PackedScene" uid="uid://d0qud8dgk1de2" path="res://entities/weapons/Rifle.tscn" id="4_mxg27"]
+[ext_resource type="Script" path="res://states/player_idle_state.gd" id="5_der6y"]
+[ext_resource type="Script" path="res://states/player_moving_state.gd" id="6_rwoh3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6nhjm"]
 size = Vector2(16, 16)
@@ -31,3 +34,11 @@ zoom = Vector2(3, 3)
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_rt7y7")]
 max_health = 25
+
+[node name="StateMachine" parent="." instance=ExtResource("4_jb82f")]
+
+[node name="Idle" type="Node2D" parent="StateMachine"]
+script = ExtResource("5_der6y")
+
+[node name="Moving" type="Node2D" parent="StateMachine"]
+script = ExtResource("6_rwoh3")
