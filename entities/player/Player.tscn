@@ -35,10 +35,13 @@ zoom = Vector2(3, 3)
 [node name="HealthComponent" parent="." instance=ExtResource("3_rt7y7")]
 max_health = 25
 
-[node name="StateMachine" parent="." instance=ExtResource("4_jb82f")]
+[node name="StateMachine" parent="." node_paths=PackedStringArray("init_state") instance=ExtResource("4_jb82f")]
+init_state = NodePath("Idle")
 
 [node name="Idle" type="Node2D" parent="StateMachine"]
 script = ExtResource("5_der6y")
 
 [node name="Moving" type="Node2D" parent="StateMachine"]
 script = ExtResource("6_rwoh3")
+
+[connection signal="on_death" from="HealthComponent" to="." method="_on_health_component_on_death"]

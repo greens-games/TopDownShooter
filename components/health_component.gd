@@ -1,5 +1,5 @@
 extends Node
-
+class_name HealthComponent
 signal on_death
 
 @export var max_health:int
@@ -15,7 +15,6 @@ func _ready():
 func _process(delta):
 	if current_health <= 0:
 		emit_signal("on_death")
-		get_parent().queue_free()
 	pass
 
 func take_damage(damage_taken:int):

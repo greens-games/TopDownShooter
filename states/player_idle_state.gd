@@ -9,7 +9,7 @@ func update(delta):
 		state_machine.change_state("Moving")
 
 func check_inputs(input:String):
-	return Input.is_action_just_pressed(input)
+	return Input.is_action_pressed(input)
 
 func enter():
 	print("entering idle")

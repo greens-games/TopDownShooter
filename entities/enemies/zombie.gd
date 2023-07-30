@@ -27,6 +27,7 @@ func _process(delta):
 	pass
 
 func _on_health_component_on_death():
+	queue_free()
 	emit_signal("award_exp", exp_reward)
 	pass # Replace with function body.
 

@@ -3,13 +3,9 @@ class_name Player
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
-@onready var weapon = $Rifle
-@onready var init_state = $StateMachine/Idle
-@onready var state_machine:StateMachine = $StateMachine
 var curr_exp:int = 0
 
 func _ready():
-	state_machine.init(init_state)
 	pass
 
 func _physics_process(delta):
@@ -20,3 +16,8 @@ func _physics_process(delta):
 	
 func gain_exp(exp_gained:int):
 	curr_exp += exp_gained
+
+
+func _on_health_component_on_death():
+	pass # Replace with function body.
+
