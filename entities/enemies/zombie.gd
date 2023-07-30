@@ -17,7 +17,6 @@ func _ready():
 	next_position = nav.get_next_path_position()
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if nav.is_target_reachable() and not player_in_range:
